@@ -51,18 +51,26 @@ def main():
 def compilerCPP(filename, slnfilename):
  clang = os.system(f'clang++ {filename} -o {slnfilename}')
  if clang == 0:
-  os.system(f'mv {slnfilename} ~')
-  os.system(f'chmod +x $HOME/{slnfilename}')
-  print(f'All done\nnow type cd ~ followed by ./{slnfilename}')
+  if os.path.isdir(os.path.expanduser('~/CPPFolder')):
+   os.system(f'mv {slnfilename} ~/CPPFolder')
+   os.system(f'chmod +x $HOME/CPPFolder/{slnfilename}')
+   print(f'All done\nnow type cd $HOME/CPPFolder followed by ./{slnfilename}')
+  else:
+   os.system('mkdir $HOME/CPPFolder')
+   compilerCPP(filename, slnfilename)
  else:
   print('There was an error')
 
 def compilerC(filename, slnfilename):
  clang = os.system(f'clang {filename} -o {slnfilename}')
  if clang == 0:
-  os.system(f'mv {slnfilename} ~')
-  os.system(f'chmod +x $HOME/{slnfilename}')
-  print(f'All done\nnow type cd ~ followed by ./{slnfilename}')
+  if os.path.isdir(os.path.expanduser('~/CFolder')):
+   os.system(f'mv {slnfilename} ~/CFolder')
+   os.system(f'chmod +x $HOME/CFolder/{slnfilename}')
+   print(f'All done\nnow type cd $HOME/CFolder followed by ./{slnfilename}')
+  else:
+   os.system('mkdir $HOME/CFolder')
+   compilerC(filename, slnfilename)
  else:
   print('There was an error')
 	
