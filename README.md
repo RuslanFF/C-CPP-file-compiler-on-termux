@@ -5,7 +5,7 @@
  # usage:
   To have access to the shared storage you need to write  
   
-  + termux-установка-хранилище 
+  + termux-setup-storage
   
   <br>After that you will be able to open the shared storage  
   
