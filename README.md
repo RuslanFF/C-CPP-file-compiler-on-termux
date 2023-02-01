@@ -18,7 +18,7 @@
 
  + cd C-CPP-file-compiler-on-termux
 
- + pip install -r requirements 
+ + pip install -r requirements.txt 
 
  + pkg install clang
 
