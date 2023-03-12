@@ -27,3 +27,7 @@
  <br> After that you should put the script main.py in the folder where your C/C++ files are, go to that folder and run the script by typing
 
  + python main.py
+ 
+ # NOTES:
+<br> I suggest using two sessions for convenience. The first session for compilations the second session to run, it will be faster and more convenient 
+ 
