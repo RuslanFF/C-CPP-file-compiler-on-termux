@@ -1,13 +1,29 @@
 import os
 from colorama import Fore
+import sys
 
 def main():
+ try:
+  if len(sys.argv) > 2:
+   extension = sys.argv[1].split('.')
+   match extension[1]:
+    case 'cpp':
+     compilerCPP(sys.argv[1], sys.argv[2])
+    case 'c':
+     compilerC(sys.argv[1], sys.argv[2])
+  else:
+   run()
+ except IndexError:
+  print(Fore.RED + 'Error! python main.py [filename.cpp] [namefile]\nExample: python main.py mycppcode.cpp main')
+
+def run():
  for cppfilesearch in os.listdir():
   try:
    if os.path.isfile(cppfilesearch):
     extension = cppfilesearch.split('.')
     match extension[1]:
      case 'cpp':
+      print('You can use a faster way to compile the code. Example python main.py mycppcode.cpp main')
       filename = str(input(f'The name of your {Fore.GREEN}{cppfilesearch}{Fore.WHITE} file is correct. Yes/No: '))
       match filename.upper():
        case 'YES':
@@ -27,6 +43,7 @@ def main():
         break
       
      case 'c':
+      print('You can use a faster way to compile the code. Example python main.py mycppcode.c main')
       filename = str(input(f'The name of your {Fore.GREEN}{cppfilesearch}{Fore.WHITE} file is correct. Yes/No: '))
       match filename.upper():
        case 'YES':
