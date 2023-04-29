@@ -28,13 +28,12 @@
 
  + python main.py
  
-<<<<<<< HEAD
  <br> You can also use this way to compile your code.
  + python main.py [filename.cpp] [namefile] 
  
  <br> Enter without square brackets 
  
-=======
+
 
  # NOTES:
 <br> I suggest using two sessions for convenience. The first session for compilations the second session to run, it will be faster and more convenient 
